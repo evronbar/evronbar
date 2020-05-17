@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LearningPage</title>
+    <link rel="stylesheet" type="text/css" href="CSS\LinkPage.css" />
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <a href="LinksPage.html">Links Page</a>
+        <a href="#">Creators</a>
+        <a href="LandingPage.aspx">Main Page</a>
+
+    </div>
+    <span onclick="openNav()" style="font-size: 30px; cursor: pointer">&#9776;</span>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <a href="youtube.com/watch?v=2fQpZCamuBs">
+                <img src="pics/GoogleChess.jpg" />
+            </a>
+
+            <div class="text">Robot Chess</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <a href="https://metro.co.uk/2019/03/18/homeless-boy-8-lives-shelter-wins-prestigious-chess-championship-8933983/">
+                <img src="pics/HomelessChess.jpg" />
+            </a>
+                <div class="text">Homeless Play Chess</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <a href="gadgets.ndtv.com/internet/features/how-to-learn-chess-online-free-streams-tactics-competition-players-1803689">
+                <img src="pics/LearnChess.jpg" />
+            </a>
+            <div class="text">Learn Chess Videos</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <a href="https://en.wikipedia.org/wiki/Chess">
+                <img src="pics/board.jpg" />
+            </a>
+            <div class="text">Learn Chess Wiki</div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+</body>
+</html>

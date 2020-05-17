@@ -1,0 +1,264 @@
+﻿
+body {
+    background-image: url("../pics/BackCastle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.GetState {
+    background-image: url('../pics/join the game.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+
+
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+#id01 {
+    margin: auto;
+    width: 400px;
+    height: 600px;
+    background-color: #f1f1f1;
+    margin: auto;
+    background-image: url('../pics/Background.png');
+    width: 400px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f1f1f1;
+}
+#SignIn {
+    margin: auto;
+    background-image: url('../pics/Background.png');
+    width: 400px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f1f1f1;
+}
+
+.body {
+    margin: 10% auto;
+    text-align: center;
+}
+
+#divCircle {
+    width: 195px;
+    height: 195px;
+    border-radius: 200px;
+    position: relative;
+    overflow: hidden;
+    top: -10px;
+    left: -10px;
+    opacity: 0;
+    margin: -60px;
+    -webkit-transition: opacity 0s 0s;
+}
+
+    #divCircle img {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: lightgray;
+        border-radius: 60px;
+        border: 2px lightgray solid;
+        -webkit-transition: all 0.4s;
+    }
+
+        #divCircle img:hover {
+            border: 2px lightgray;
+            width: 55px;
+            height: 55px;
+        }
+
+#middleBubble {
+    text-align: center;
+    vertical-align: top;
+    color: lightgray; /*#6d6e71*/
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    text-align: center;
+}
+
+    #middleBubble img {
+        top: 0px !important;
+        left: 0px !important;
+    }
+
+.mainImg {
+    width: 60px;
+    position: absolute;
+    margin: -60px;
+}
+
+    .mainImg img {
+        width: 60px;
+        border-width: 0px;
+        border-style: solid;
+        border-color: rgba(0,0,0,0);
+        border-radius: 600px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s;
+        margin: 60px 0 0 60px;
+    }
+
+.avatarList {
+    margin: 0px -60px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: lightgray;
+    border-radius: 60px;
+}
+
+    .avatarList.expand .mainImg img {
+        border-color: lightgray;
+        border-width: 60px;
+        margin: 0;
+    }
+
+#divCircle.expand {
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s 0.4s;
+}
+
