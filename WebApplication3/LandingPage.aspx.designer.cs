@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ChessServer {
-    
-    
-    public partial class About {
-        
+namespace ChessServer
+{
+
+
+    public partial class About
+    {
+
         /// <summary>
         /// Name control.
         /// </summary>
@@ -20,7 +22,25 @@ namespace ChessServer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText Name;
-        
+
+        /// <summary>
+        /// Psw control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Psw;
+
+        /// <summary>
+        /// btnSignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSignIn;
+
         /// <summary>
         /// StID control.
         /// </summary>
@@ -29,7 +49,7 @@ namespace ChessServer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl StID;
-        
+
         /// <summary>
         /// UserNameSighIn control.
         /// </summary>
@@ -38,7 +58,7 @@ namespace ChessServer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText UserNameSighIn;
-        
+
         /// <summary>
         /// pswSign control.
         /// </summary>
@@ -47,14 +67,23 @@ namespace ChessServer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword pswSign;
-        
+
         /// <summary>
-        /// psw1Sign control.
+        /// psw1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword psw1Sign;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword psw1;
+
+        /// <summary>
+        /// btnSignUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSignUp;
     }
 }

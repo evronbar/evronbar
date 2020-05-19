@@ -41,9 +41,6 @@
                 <img alt="Avatar" class="avatar" src="img_avatar2.png">
 
 
-
-
-
             </div>
 
             <div class="container">
@@ -51,7 +48,9 @@
                 <input id ="Name" name="uname"  runat="server" placeholder="Enter Username" required="required" type="text">
 
                 <label for="psw"><b>Password</b></label>
-                <input name="psw" placeholder="Enter Password" required="required" type="password"  runat="server">
+                <input id="Psw" name="psw" placeholder="Enter Password" required="required" type="password"  runat="server">
+
+                <button onServerClick="SignInSubmit_Click" runat="server" id="btnSignIn" type="button">Sign In!</button>
 
                
                
@@ -64,7 +63,7 @@
         </form>
     </div>
 
-        <div id="SignIn" class="modal">
+    <div id="SignIn" class="modal">
 
         <form action="/action_page.php" class="modal-content animate" method="post">
             <div class="imgcontainer">
@@ -93,18 +92,20 @@
 
             <div class="container">
 
-                 <TextBox id="StID" TextMode="Number" runat = "server" type="Number" class="form-control" OnTextChanged="StID_TextChanged"></TextBox>
+                <TextBox id="StID" TextMode="Number" runat = "server" type="Number" class="form-control" OnTextChanged="StID_TextChanged"></TextBox>
 
                 <label for="uname"><b>Username</b></label>
-                <input id="UserNameSighIn" name="uname" placeholder="Enter Username" runat="server" required="required" type="text"></input>
+                <input id ="UserNameSighIn" name="uname" runat="server" placeholder="Enter Username" required="required" type="text">
 
                 <label for="psw"><b>Password</b></label>
-                <input id="pswSign" name="pswSign" placeholder="Enter Password" runat="server" required="required" type="password"></input>
+                <input id="pswSign" name="pswSign" placeholder="Enter Password" runat="server" required="required" type="password">
 
                 <label for="psw1"><b>Verefy Password</b></label>
-                <input id="psw1Sign" name="psw1" placeholder="Enter Password" runat="server" required="required" type="password"></input>
+                <input id="psw1" name="psw1" placeholder="Enter Password" runat="server" required="required" type="password">
                 
-
+                
+                <button OnServerClick="btnSignUp_Click" runat="server" id="btnSignUp" type="button">Sign Up!</button>
+            </div>
                
                
               
@@ -113,7 +114,15 @@
         </form>
     </div>
 
-    
+
+
+
+
+    <script>
+        function SignUpSubmit() {
+            
+        }
+    </script>
 
     <script>
         // Get the modal
