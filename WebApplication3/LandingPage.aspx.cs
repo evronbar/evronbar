@@ -23,7 +23,7 @@ namespace ChessServer
       
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            /*
+            
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
@@ -34,9 +34,10 @@ namespace ChessServer
                 sqlCmd.ExecuteNonQuery();
 
                 btnSignIn.InnerHtml = UserNameSighIn.Value.Trim();
+                btnSignUp.InnerHtml = UserNameSighIn.Value.Trim();
                 sqlCon.Close();
             }
-            */
+            
             
         }
 

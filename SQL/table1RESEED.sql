@@ -1,0 +1,1 @@
+﻿DBCC CHECKIDENT ('table1',RESEED,1)
