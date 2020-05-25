@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DAL;
 using System.Data.SqlClient;
 using System.Data;
+using WebApplication3;
 
 
 namespace ChessServer
@@ -18,12 +19,12 @@ namespace ChessServer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             
+
         }
-      
+
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            
+
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
@@ -37,23 +38,27 @@ namespace ChessServer
                 btnSignUp.InnerHtml = UserNameSighIn.Value.Trim();
                 sqlCon.Close();
             }
-            
-            
+
+
         }
 
 
         protected void SignInSubmit_Click(object sender, EventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(connectionString);
-            string query = String.Format("Select * from table1 Where Name = '{0}' and Password = '{1}'",Name.Value.Trim(), Psw.Value.Trim());
+            string query = String.Format("Select * from table1 Where Name = '{0}' and Password = '{1}'", Name.Value.Trim(), Psw.Value.Trim());
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlCon);
 
             DataTable dtb1 = new DataTable();
             sda.Fill(dtb1);
-            if(dtb1.Rows.Count == 1)
+            if (dtb1.Rows.Count == 1)
             {
                 btnSignIn.InnerHtml = "Success";
-            } else
+                Session["username"] = Name.Value.Trim();
+                Response.Redirect("ProfilePage.aspx");
+
+            }
+            else
             {
                 btnSignIn.InnerHtml = "HACKERRRR";
             }

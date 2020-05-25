@@ -165,6 +165,7 @@
     <Content Include="pics\WhitePawn.png" />
     <Content Include="pics\WhiteQueen.png" />
     <Content Include="pics\WhiteRook.png" />
+    <Content Include="ProfilePage.aspx" />
     <Content Include="Scripts\MyScripts\ChessD.js" />
     <Content Include="Scripts\MyScripts\LogIn.js" />
     <Content Include="ServerComm.ashx" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="MyModule1.cs" />
+    <Compile Include="ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
