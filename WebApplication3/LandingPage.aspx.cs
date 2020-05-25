@@ -8,6 +8,7 @@ using DAL;
 using System.Data.SqlClient;
 using System.Data;
 using WebApplication3;
+using System.Windows.Forms;
 
 
 namespace ChessServer
@@ -19,7 +20,7 @@ namespace ChessServer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btnSignIn.Click += new EventHandler(this.SignInSubmit_Click);
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)
@@ -32,10 +33,9 @@ namespace ChessServer
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@Name", UserNameSighIn.Value.Trim());
                 sqlCmd.Parameters.AddWithValue("@Password", pswSign.Value.Trim());
+                sqlCmd.Parameters.AddWithValue("@Icon", AvatarImg.Src.ToString());
                 sqlCmd.ExecuteNonQuery();
 
-                btnSignIn.InnerHtml = UserNameSighIn.Value.Trim();
-                btnSignUp.InnerHtml = UserNameSighIn.Value.Trim();
                 sqlCon.Close();
             }
 
@@ -53,14 +53,18 @@ namespace ChessServer
             sda.Fill(dtb1);
             if (dtb1.Rows.Count == 1)
             {
-                btnSignIn.InnerHtml = "Success";
+                
                 Session["username"] = Name.Value.Trim();
                 Response.Redirect("ProfilePage.aspx");
 
+                btnSignIn.Text = "YES";
+                
             }
             else
             {
-                btnSignIn.InnerHtml = "HACKERRRR";
+                
+                btnSignIn.Text = "NO";
+                
             }
         }
     }

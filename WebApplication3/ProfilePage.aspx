@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title></title>
     <style type="text/css">
@@ -14,12 +15,15 @@
     <link href="CSS/ProfileStylesheet.css" rel="stylesheet" />
 
 </head>
+
 <body>
     
     <form id="UserPage" runat="server">
 
-        <div>
+        <div id="header">
             <h1 runat="server" id="usernameHeader">My User Name</h1>
+
+            <div class="mainImg"><img src="pics/icon%201.png" id="userAvatar" runat="server"/></div>
         </div>
 
         <div id="Links">
@@ -29,9 +33,7 @@
 
         <div id="Games">
             <asp:Label ID="TotalGames" runat="server" Text="TotalGames: 12" CssClass="TotalGames"></asp:Label>
-            <asp:ListBox ID="GamesListBox" runat="server" CssClass="gamesTextBox" Rows="15">
-
-            </asp:ListBox>
+            <asp:ListBox ID="GamesListBox" runat="server" CssClass="gamesTextBox" Rows="15"></asp:ListBox>
         </div>
 
     </form>

@@ -18,58 +18,63 @@ namespace WebApplication3
             int totalGames = 0;
             string user = Session["username"].ToString().Trim();
             string enemy = "";
+            
             usernameHeader.InnerHtml = user;
 
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
 
             connection.Open();
 
-            cmd.Connection = connection;
-            cmd.CommandText = "SELECT * FROM gamesTable WHERE Player1 = '" + user + "' OR Player2 = '" + user + "';";
-            reader = cmd.ExecuteReader();
 
-
-            while (reader.Read())
+            using (SqlCommand cmd = new SqlCommand(("SELECT * FROM gamesTable WHERE Player1 = '" + user + "' OR Player2 = '" + user + "';"), connection))
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                if (reader["Player1"].ToString() == user)
+                while (reader.Read())
                 {
-                    enemy = reader["Player2"].ToString().Trim();
-                }
-                else if (reader["Player2"].ToString() == user)
-                {
-                    enemy = reader["Player1"].ToString().Trim();
-                }
+                    if (reader["Player1"].ToString() == user)
+                    {
+                        enemy = reader["Player2"].ToString().Trim();
+                    }
+                    else if (reader["Player2"].ToString() == user)
+                    {
+                        enemy = reader["Player1"].ToString().Trim();
+                    }
 
-                string winner = reader["Winner"].ToString().Trim();
-                ListItem game = new ListItem();
+                    string winner = reader["Winner"].ToString().Trim();
+                    ListItem game = new ListItem();
 
-                if (winner == user)
-                {
-                    //GamesListBox.Items.Add(user + " won against " + enemy);
-                    game = new ListItem((user + " won against " + enemy).ToString());
-                    game.Attributes.Add("style", "color: #44bd32");
+                    if (winner == user)
+                    {
+                        //GamesListBox.Items.Add(user + " won against " + enemy);
+                        game = new ListItem((user + " won against " + enemy).ToString());
+                        game.Attributes.Add("style", "color: #44bd32");
+                    }
+                    else if (winner == enemy)
+                    {
+                        //GamesListBox.Items.Add(user + " lost against " + enemy);
+                        game = new ListItem((user + " lost against " + enemy).ToString());
+                        game.Attributes.Add("style", "color: #c23616");
+                    }
+                    GamesListBox.Items.Add(game);
+                    totalGames++;
                 }
-                else if (winner == enemy)
-                {
-                    //GamesListBox.Items.Add(user + " lost against " + enemy);
-                    game = new ListItem((user + " lost against " + enemy).ToString());
-                    game.Attributes.Add("style", "color: #c23616");
-                }
-                GamesListBox.Items.Add(game);
-                totalGames++;
             }
+            
 
             TotalGames.Text = "Total Games: " + totalGames;
-            connection.Close();
+
+            using (SqlCommand cmd = new SqlCommand(("SELECT * FROM table1 WHERE Name = '" + user + "';"), connection))
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while(reader.Read())
+                {
+                    userAvatar.Src = reader["Icon"].ToString();
+                }
+            }
+
+                connection.Close();
         }
 
-        /*
-        protected void StartQueue(object sender, EventArgs e)
-        {
-            queueSign.InnerHtml = "In Queue...";
-        }
-        */
+
     }
 }

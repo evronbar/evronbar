@@ -25,7 +25,7 @@
         <a href="LinksPage.html">Links Page</a>
         <a href="#">Creators</a>
         <a href="LandingPage.aspx">Main Page</a>
-        <img id="GetState" onclick="buttonclick()" src="pics/join the game.png" />
+
 
     </div>
     
@@ -49,12 +49,13 @@
             <div class="container">
 
                 <label for="username" style="color:#f5f6fa; font-family: 'Roboto Condensed'; font-size:20px; font-style:normal; font-weight:300;"><b>Username</b></label>
-                <input id ="Name" name="username"  runat="server" placeholder="Enter Username" required="required" type="text"><br />
+                <input id ="Name" name="username"  runat="server" placeholder="Enter Username" type="text"><br />
 
                 <label for="psw" style="color:#f5f6fa; font-family: 'Roboto Condensed'; font-size:20px; font-style:normal; font-weight:300;"><b>Password</b></label>
-                <input id="Psw" name="psw" placeholder="Enter Password" required="required" type="password"  runat="server"><br />
+                <input id="Psw" name="psw" placeholder="Enter Password" type="password"  runat="server"><br />
 
-                <button onServerClick="SignInSubmit_Click" runat="server" id="btnSignIn" type="button">Sign In!</button>
+                <%--<button onServerClick="SignInSubmit_Click" runat="server" id="btnSignIn" type="button">Sign In!</button>--%>
+                <asp:Button OnClick="SignInSubmit_Click" runat="server" id="btnSignIn" Text="Sign in!" />
 
             </div>
 
@@ -66,7 +67,6 @@
             </div>
         </div>
 
-
         <div id="SignIn" class="modal">
 
             <div class="imgcontainer">
@@ -75,7 +75,7 @@
 
                     <div class="avatarList">
 
-                        <asp:div name="AvatarMain" class="mainImg"> <img src="pics/icon%201.png" /></asp:div>
+                        <asp:div name="AvatarMain" class="mainImg"> <img src="pics/icon%201.png" runat="server" id="AvatarImg"/></asp:div>
 
                         <div id="divCircle">
 
@@ -99,18 +99,19 @@
                 <TextBox id="StID" TextMode="Number" runat = "server" type="Number" class="form-control" OnTextChanged="StID_TextChanged"></TextBox>
 
                 <label for="uname"><b>Username</b></label>
-                <input id ="UserNameSighIn" name="uname" runat="server" placeholder="Enter Username" required="required" type="text">
+                <input id ="UserNameSighIn" name="uname" runat="server" placeholder="Enter Username" type="text">
 
                 <label for="psw"><b>Password</b></label>
-                <input id="pswSign" name="pswSign" placeholder="Enter Password" runat="server" required="required" type="password">
+                <input id="pswSign" name="pswSign" placeholder="Enter Password" runat="server" type="password">
 
                 <label for="psw1"><b>Verefy Password</b></label>
-                <input id="psw1" name="psw1" placeholder="Enter Password" runat="server" required="required" type="password">
+                <input id="psw1" name="psw1" placeholder="Enter Password" runat="server" type="password">
                 
                 <button OnServerClick="btnSignUp_Click" runat="server" id="btnSignUp" type="button">Sign Up!</button>
 
             </div>
         </div>
+
     </form>
 
 
@@ -119,6 +120,7 @@
         // Get the modal
         document.getElementById('id01').style.display = 'block';
          document.getElementById('SignIn').style.display = "none";
+
         var modal = document.getElementById('id01');
 
         // When the user clicks anywhere outside of the modal, close it
@@ -131,6 +133,13 @@
         function OpenSighInForm() {
             document.getElementById('id01').style.display = "none";
             document.getElementById('SignIn').style.display = 'block';
+
+        }
+
+        function OpenProfile() {
+            document.getElementById('id01').style.display = "none";
+            document.getElementById('SignIn').style.display = "none";
+
         }
 
     </script>
