@@ -16,6 +16,7 @@ namespace WebApplication3
         protected void Page_Load(object sender, EventArgs e)
         {
             int totalGames = 0;
+            int totalWins = 0;
             string user = Session["username"].ToString().Trim();
             string enemy = "";
             
@@ -48,20 +49,26 @@ namespace WebApplication3
                         //GamesListBox.Items.Add(user + " won against " + enemy);
                         game = new ListItem((user + " won against " + enemy).ToString());
                         game.Attributes.Add("style", "color: #44bd32");
+                        totalWins++;
                     }
                     else if (winner == enemy)
                     {
                         //GamesListBox.Items.Add(user + " lost against " + enemy);
                         game = new ListItem((user + " lost against " + enemy).ToString());
                         game.Attributes.Add("style", "color: #c23616");
+                    } else
+                    {
+                        game = new ListItem((user + " competed against " + enemy + " and no one won").ToString());
+                        game.Attributes.Add("style", "color: #f5f6fa");
                     }
                     GamesListBox.Items.Add(game);
                     totalGames++;
                 }
             }
-            
 
-            TotalGames.Text = "Total Games: " + totalGames;
+            TotalWins.InnerHtml = "Total Wins: " + totalWins;
+            TotalGames.InnerHtml = "Total Games: " + totalGames;
+
 
             using (SqlCommand cmd = new SqlCommand(("SELECT * FROM table1 WHERE Name = '" + user + "';"), connection))
             using (SqlDataReader reader = cmd.ExecuteReader())

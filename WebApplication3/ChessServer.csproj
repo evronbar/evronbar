@@ -161,6 +161,7 @@
     <Content Include="pics\LearnChess.jpg" />
     <Content Include="pics\log in.png" />
     <Content Include="pics\sign in.png" />
+    <Content Include="pics\sign up.png" />
     <Content Include="pics\WhiteBishop.png" />
     <Content Include="pics\WhiteKing.png" />
     <Content Include="pics\WhiteKnight.png" />

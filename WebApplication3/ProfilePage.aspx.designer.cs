@@ -24,15 +24,6 @@ namespace WebApplication3
         protected global::System.Web.UI.HtmlControls.HtmlForm UserPage;
 
         /// <summary>
-        /// usernameHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usernameHeader;
-
-        /// <summary>
         /// userAvatar control.
         /// </summary>
         /// <remarks>
@@ -42,22 +33,13 @@ namespace WebApplication3
         protected global::System.Web.UI.HtmlControls.HtmlImage userAvatar;
 
         /// <summary>
-        /// queueSign control.
+        /// usernameHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl queueSign;
-
-        /// <summary>
-        /// TotalGames control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalGames;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usernameHeader;
 
         /// <summary>
         /// GamesListBox control.
@@ -67,5 +49,23 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox GamesListBox;
+
+        /// <summary>
+        /// TotalGames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalGames;
+
+        /// <summary>
+        /// TotalWins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TotalWins;
     }
 }

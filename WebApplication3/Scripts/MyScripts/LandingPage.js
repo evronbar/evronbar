@@ -16,7 +16,7 @@ function httpGet(theUrl) {
 
 var color = "Unknown";
 function buttonclick() {
-    document.getElementById('queueSign').innerText = 'in Queue...';
+    document.getElementById('queueSign').innerHTML = 'in Queue...';
     var res = httpGet(server_url_comm + "?Family=Game&Action=Set&Color="+color);
     if (res == "White")
     {

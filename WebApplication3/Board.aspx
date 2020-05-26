@@ -409,7 +409,7 @@ StartPosition();
                         }
 
                         if (resp == "Is In CheckMate") {
-                            window.alert("You Are CheckMated And Losed The Game!!!");
+                            window.alert("You Are CheckMated And Lost The Game!!!");
 
                         }
 
