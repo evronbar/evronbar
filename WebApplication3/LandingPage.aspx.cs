@@ -15,7 +15,6 @@ namespace ChessServer
 {
     public partial class About : Page
     {
-        //string connectionString = "@Data source = (localdb)\MSSQLLocalDB;Database=ChessDB;Trusted_Connection=True;";
         string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ChessDB; Integrated Security=True;";
 
         protected void Page_Load(object sender, EventArgs e)

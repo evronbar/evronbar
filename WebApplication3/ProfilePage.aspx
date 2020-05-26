@@ -23,7 +23,7 @@
                     </div>
                     <h1  runat="server" id="usernameHeader">My User Name</h1>
                 </div>
-                            
+        
                 <ul class="navigation">
                     <a href="Creators.html"><li>Creators</li></a>
                     <a href="LinksPage.html"><li>Links</li></a>
