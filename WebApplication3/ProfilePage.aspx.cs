@@ -17,9 +17,18 @@ namespace WebApplication3
         {
             int totalGames = 0;
             int totalWins = 0;
-            string user = Session["username"].ToString().Trim();
+            //string user = Session["username"].ToString().Trim();
+            string user;
             string enemy = "";
             
+            if (Session["username2"] == null)
+            { 
+                user = Session["username"].ToString().Trim(); 
+            } else
+            {
+                user = Session["username2"].ToString().Trim();
+            }
+
             usernameHeader.InnerHtml = user;
 
             SqlConnection connection = new SqlConnection(connectionString);

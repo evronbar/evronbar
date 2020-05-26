@@ -20,6 +20,13 @@ namespace ChessServer
         protected void Page_Load(object sender, EventArgs e)
         {
             btnSignIn.Click += new EventHandler(this.SignInSubmit_Click);
+            //if(Session["username"]!=null)
+            //{
+            //    btnSignIn.Text = (string)Session["username"];
+            //} else
+            //{
+            //    btnSignIn.Text = "Null";
+            //}
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)
@@ -47,22 +54,39 @@ namespace ChessServer
             SqlConnection sqlCon = new SqlConnection(connectionString);
             string query = String.Format("Select * from table1 Where Name = '{0}' and Password = '{1}'", Name.Value.Trim(), Psw.Value.Trim());
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlCon);
+            SqlCommand sqlCmd = new SqlCommand("AddGame", sqlCon);
 
             DataTable dtb1 = new DataTable();
             sda.Fill(dtb1);
             if (dtb1.Rows.Count == 1)
             {
+                if(Session["username"]==null)
+                {
+                    Session["username"] = Name.Value.Trim();
+                } else
+                {
+                    Session["username2"] = Name.Value.Trim();
+
+                    using (sqlCon)
+                    {
+                        sqlCon.Open();
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@Player1", (string)Session["username"]);
+                        sqlCmd.Parameters.AddWithValue("@Player2", (string)Session["username2"]);
+                        sqlCmd.ExecuteNonQuery();
+
+                        sqlCon.Close();
+                    }
+                }
+
                 
-                Session["username"] = Name.Value.Trim();
                 Response.Redirect("ProfilePage.aspx");
 
-                btnSignIn.Text = "YES";
                 
             }
             else
             {
-                
-                btnSignIn.Text = "NO";
+                btnSignIn.Text = "Error: Wrong Credentials";
                 
             }
         }
