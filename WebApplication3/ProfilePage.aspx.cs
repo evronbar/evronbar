@@ -11,7 +11,7 @@ namespace WebApplication3
 {
     public partial class ProfilePage : System.Web.UI.Page
     {
-        string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ChessDB; Integrated Security=True;";
+        string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = USERS; Integrated Security=True;";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,15 +20,17 @@ namespace WebApplication3
             //string user = Session["username"].ToString().Trim();
             string user;
             string enemy = "";
-            
-            if (Session["username2"] == null)
-            { 
-                user = Session["username"].ToString().Trim(); 
-            } else
-            {
-                user = Session["username2"].ToString().Trim();
-            }
 
+            //if (Session["username2"] == null)
+            //{ 
+            //    user = Session["username"].ToString().Trim(); 
+            //} else
+            //{
+            //    user = Session["username2"].ToString().Trim();
+            //}
+
+            user = Session["username"].ToString();
+            
             usernameHeader.InnerHtml = user;
 
             SqlConnection connection = new SqlConnection(connectionString);

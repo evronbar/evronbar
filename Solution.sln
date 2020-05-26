@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessServer", "WebApplicati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessDotNet", "Chess.NET-master\ChessDotNet\ChessDotNet.csproj", "{1E2F15E5-9451-4DAB-9F6E-0944992B6F27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "C:\Users\K0P1TZ\source\repos\evronbar\evronbar\DAL\DAL.csproj", "{C244BCD9-1BEE-4518-B3C6-88B9CC89C58F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "C:\Users\Bar\Desktop\Solution - Copy\DAL\DAL.csproj", "{C244BCD9-1BEE-4518-B3C6-88B9CC89C58F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

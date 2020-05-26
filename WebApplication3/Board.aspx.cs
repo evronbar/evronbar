@@ -15,5 +15,6 @@ namespace WebApplication3
                 Color.Value = Request["Color"].ToString();
             }
         }
+
     }
 }

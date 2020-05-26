@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using ChessDotNet;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ChessServer
 {
@@ -25,7 +27,7 @@ namespace ChessServer
         protected static string LastTo = null;
         protected static string PlayerWhite;
         protected static string PlayerBlack;
-        protected static string Comment= null;
+        protected static string Comment = null;
 
 
         public void ProcessRequest(HttpContext context)
@@ -38,6 +40,7 @@ namespace ChessServer
             String From = context.Request.QueryString["From"];
             String To = context.Request.QueryString["To"];
             String Sentence = context.Request.QueryString["Sentence"];
+            String PlayerName = context.Request.QueryString["Player"];
             PlayerWhite = context.Request.QueryString["PlayerWhite"];
             PlayerBlack = context.Request.QueryString["PlayerBlack"];
 
@@ -59,6 +62,7 @@ namespace ChessServer
                         {
                             state = State.OnePlayer;
                             resp = "White";
+                            PlayerWhite = PlayerName;
                         }
                         else if (state == State.NoPlayers && Color == "White")
                         {
@@ -74,6 +78,7 @@ namespace ChessServer
                         {
                             state = State.TwoPlayers;
                             resp = "Black";
+                            PlayerBlack = PlayerName;
                         }
                         else if (state == State.OnePlayer && Color == "White")
                         {
@@ -265,14 +270,30 @@ namespace ChessServer
                         {
                             ChessDotNet.Player player = Player.White;
                             ChessDotNet.Player playerOpi = Player.Black;
-                            if (Color == "Black")
+
+                            string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = USERS; Integrated Security=True;";
+                            SqlConnection sqlCon = new SqlConnection(connectionString);
+                            SqlCommand sqlCmd = new SqlCommand("AddGame", sqlCon);
+
+                            using (sqlCon)
                             {
-                                player = Player.Black;
-                                playerOpi = Player.White;
+                                sqlCon.Open();
+                                sqlCmd.CommandType = CommandType.StoredProcedure;
+                                sqlCmd.Parameters.AddWithValue("@Player1", PlayerWhite);
+                                sqlCmd.Parameters.AddWithValue("@Player2", PlayerBlack);
+                                if (game.IsWinner(player) == true)
+                                {
+                                    sqlCmd.Parameters.AddWithValue("@Winner", PlayerWhite);
+                                } else
+                                {
+                                    sqlCmd.Parameters.AddWithValue("@Winner", PlayerBlack);
+                                }
+                                    sqlCmd.ExecuteNonQuery();
+                                sqlCon.Close();
                             }
 
-                            game.IsWinner(player);
                         }
+                        
                     }
 
                     break;
@@ -282,32 +303,19 @@ namespace ChessServer
                     break;
 
                 case "Chat":
-                    if(Action == "GetChat")
+
+                    if(Action=="SendSen")
+                    {
+                        Comment = Color + " says: " + Sentence;
+                        resp = Comment;
+                    }
+
+                    if (Action == "SendSen")
                     {
                         resp = Comment;
-                        
+                        Comment = null;
                     }
 
-                    if(Action == "SendChat")
-                    {
-                        Comment = Sentence;
-
-
-                        if (Color == "White")
-                        {
-                            resp = "White Is Saying:" + Comment;
-                            Comment = resp;
-                        }
-
-                        else
-                        {
-                            resp = "Black Is Saying:" + Comment;
-                            Comment = resp;
-                        }
-                    }
-
-
-                    
 
                     int a = 4;
                     break;

@@ -8,7 +8,27 @@
     <title>Profile</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"/>
-    <link href="~/CSS/ProfileStylesheet.css" rel="stylesheet" />
+    <link href="CSS/ProfileStylesheet.css" rel="stylesheet" />
+
+    <style>
+        body{
+            background-image: url("../pics/Background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .main-content {
+            height: 660px;
+        }
+
+        .statistics {
+            font-family: 'Roboto Condensed';
+            font-size: 32px;
+            font-weight: 400;
+            color: #f5f6fa;
+        }
+    </style><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b><meta charset="utf-8"><b style="font-weight:normal;" id="docs-internal-guid-c86a9147-7fff-9229-fe82-67aa6f76d282"><span style="font-size:12pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"></span></b>
+
 </head>
 
 <body>

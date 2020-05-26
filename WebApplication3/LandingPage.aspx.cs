@@ -15,7 +15,7 @@ namespace ChessServer
 {
     public partial class About : Page
     {
-        string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ChessDB; Integrated Security=True;";
+        string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = USERS; Integrated Security=True;";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,25 +60,25 @@ namespace ChessServer
             sda.Fill(dtb1);
             if (dtb1.Rows.Count == 1)
             {
-                if(Session["username"]==null)
-                {
-                    Session["username"] = Name.Value.Trim();
-                } else
-                {
-                    Session["username2"] = Name.Value.Trim();
+                //if(Session["username"]==null)
+                //{
+                //    Session["username"] = Name.Value.Trim();
+                //} else
+                //{
+                //    Session["username2"] = Name.Value.Trim();
 
-                    using (sqlCon)
-                    {
-                        sqlCon.Open();
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        sqlCmd.Parameters.AddWithValue("@Player1", (string)Session["username"]);
-                        sqlCmd.Parameters.AddWithValue("@Player2", (string)Session["username2"]);
-                        sqlCmd.ExecuteNonQuery();
+                //    using (sqlCon)
+                //    {
+                //        sqlCon.Open();
+                //        sqlCmd.CommandType = CommandType.StoredProcedure;
+                //        sqlCmd.Parameters.AddWithValue("@Player1", (string)Session["username"]);
+                //        sqlCmd.Parameters.AddWithValue("@Player2", (string)Session["username2"]);
+                //        sqlCmd.ExecuteNonQuery();
 
-                        sqlCon.Close();
-                    }
-                }
-
+                //        sqlCon.Close();
+                //    }
+                //}
+                Session["username"] = Name.Value.Trim();
                 
                 Response.Redirect("ProfilePage.aspx");
 

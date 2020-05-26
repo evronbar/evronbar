@@ -97,26 +97,8 @@
   
 
     <asp:HiddenField id="Color" runat="server"/>
-
-                <div id="ChatRoomBox">
-              
-            <button class="open-button" onclick="openForm()">Chat</button>
-
-<div class="chat-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
-      <div id ="test"><p></p></div>
-
-
-
-    <label for="msg"><b>Message</b></label>
-    <textarea id="msg" placeholder="Type message.." name="msg" required></textarea>
-
-    <button type="submit" class="btn" onclick="SendChat()">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-    </div>
-        </div>
+        <asp:HiddenField id="Winner" runat="server"/>
+             
 
        <script>var server_url = "https://localhost:44398/"
 var server_url_comm = server_url + "ServerComm.ashx"
@@ -224,17 +206,17 @@ var res;
         var BlackKnight = new Image();
         BlackKnight.src = 'pics/BlackKnight.png';
          var BlackKnight2 = new Image();
-        BlackKnight2.src = 'pics/BlackKnight.png';
+        BlackKnight2.src = 'pics/BlackKnight.png';//תמונות גרפיקה למשחק
 
 
-function httpGet(theUrl) {
+function httpGet(theUrl) {//פונקציית קריאה לסרוור
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false);
     xmlHttp.send(null);
     return xmlHttp.responseText;
 }
 
-function imgswipe() {
+function imgswipe() {//שינוי גראפיקה באישור הסרוור
 
     //document.getElementById(nameofdivA).innerHTML = " ";
 
@@ -251,7 +233,7 @@ function imgswipe() {
 
 }
 
-function clickondiv(name) {
+function clickondiv(name) {// ניתוח מיקום הלחיצה של העכבר במשבצת
 
     counterofclickondiv++;
 
@@ -297,14 +279,14 @@ function counterofclick() {
     return counterofclick() + 1;
 }
 
-function NewGame() {
+function NewGame() {//יצירת משחק באישור הסרוור
     color = document.getElementById('Color').value;
     var xres = httpGet(server_url_comm + "?Family=Chess&Action=NewGame&Color=" + color);
     document.getElementById("test").innerHTML = xres;
 }
 
 
-function Move() {
+function Move() {//בדיקת תקינות מהלך עם סרוור
     color = document.getElementById('Color').value;
 
     //document.getElementById("places").innerHTML = nameofdivA + "    " + nameofdivB + "  " + color + " ";
@@ -316,7 +298,7 @@ function Move() {
 }
 
 
-function StartPosition() {
+function StartPosition() {//עיצוב החיילים הראשוני במשחק
             
         //start for the white unit by char
         document.getElementById("A1").appendChild(WhiteRook);
@@ -410,6 +392,12 @@ StartPosition();
 
                         if (resp == "Is In CheckMate") {
                             window.alert("You Are CheckMated And Lost The Game!!!");
+                            if (color == "White" || color == "white") {
+                                document.getElementById('Color').value = "Black";
+                            }
+                            if (color == "Black" || color == "black") {
+                                document.getElementById('Color').value = "White";
+                            }
 
                         }
 
